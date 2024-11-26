@@ -22,7 +22,7 @@ func handelMain(w http.ResponseWriter, req *http.Request) {
 	if req.URL.RawQuery == "" {
 		// 如果没有查询参数，则返回 index.html 的内容
 		// 获取嵌入的 index.html 文件
-		index, err := http.Dir("static").Open("index.html") // 假设静态文件路径是 static/index.html
+		index, err := indexHTML.Open("static/index.html") // 假设静态文件路径是 static/index.html
 		if err != nil {
 			http.Error(w, "内部服务器错误", http.StatusInternalServerError)
 			return
